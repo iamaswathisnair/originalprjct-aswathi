@@ -1,0 +1,21 @@
+.nav-link:hover{
+    color: blue !important;
+
+}
+
+body{
+    font-family: 'Mukta', sans-serif;
+}
+
+h1{
+ color: red;
+}
+
+h3{
+    color: black;
+   }
+   
+.navbar-color{
+    background:  #c9e1c1 !important;
+    
+}
