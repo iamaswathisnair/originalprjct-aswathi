@@ -6,9 +6,11 @@
 body{
     font-family: 'Mukta', sans-serif;
 }
-
-h1{
+ 
+h6{
  color: red;
+ /* margin-top:10px; */
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h3{
@@ -19,3 +21,11 @@ h3{
     background:  #c9e1c1 !important;
     
 }
+.img-todo {
+    background-image: url('/static/img/walll.jpg');
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -60px;
+  }
+
