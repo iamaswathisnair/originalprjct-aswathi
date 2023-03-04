@@ -25,6 +25,17 @@ h6{
 }
 .p-tag{
   font-size: 30px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  l
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  
+}
+.h2tag{
+  font-size: 80px;
+  font-weight:bold;
+  letter-spacing: 3px;
+}
+
+.h3tag{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: azure;
 }

@@ -22,10 +22,21 @@ h3{
     
 }
 .img-todo {
-    background-image: url('/static/img/walll.jpg');
+    background-image: url('/static/img/yellow.jpg');
     background-size: cover;
     width: 100%;
     overflow: hidden;
     margin-top: -60px;
   }
 
+.my-nav{
+    margin-top:60px;
+    color:white !important;
+   
+}
+.border-nav{
+    background-color: orange;
+    height: 900px;
+    margin-right: 40px;
+    color:white ;
+}
