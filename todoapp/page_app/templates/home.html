@@ -14,10 +14,35 @@ home
 
 
 {% block content %}
-<div class="hometag">
-<h3 class="h3tag">Hello ,welcome Aswathi!</h3>
-<H2 class="h2tag">9:35 am</H2>
-<p class="p-tag">"Each day I will accomplish one thing on my to do list.” <br>
--paul j meyer </p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            <div class="hometag">
+                <h3 class="h3tag">Hello ,welcome Aswathi!</h3>
+                <H2 class="h2tag">9:35 am</H2>
+                <p class="p-tag">"Each day I will accomplish one thing on my to do list.” <br>
+                -paul j meyer </p>
+                </div>  
+        </div>
+        <div class="col-4 task-card">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;margin-top:20px">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    
 </div>
+
 {% endblock content %}
