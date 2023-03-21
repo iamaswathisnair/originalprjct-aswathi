@@ -25,11 +25,11 @@
     <nav
       class="navbar navbar-dark fixed-top navbar-expand-lg "
     >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">
+      <div class="container-fluid" "nav" >
+        <a class="navbar-brand"  href="{% url 'home' %}">
           Todo</a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler" 
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -39,7 +39,8 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        <div class="collapse navbar-collapse"   id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="{% url 'home' %}"
@@ -97,7 +98,7 @@
     </nav>
     <div class="container-fluid mt-2">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block  sidebar mt-5 fixed ">
+        <nav class="col-md-2 d-none d-md-block  sidebar mt-5 fixed " >
           <div class="sidebar position-fixed pt-2 fixed border-nav ">
             <ul class="nav flex-column my-nav">
               <li class="nav-item">
@@ -210,8 +211,8 @@
                   theme
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              {% comment %} <li class="nav-item">
+                <a class="nav-link" href="#"> {% endcomment %}
                   {% comment %} <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -228,9 +229,9 @@
                     <polyline points="2 17 12 22 22 17"></polyline>
                     <polyline points="2 12 12 17 22 12"></polyline>
                   </svg> {% endcomment %}
-                  Integrations
+                  {% comment %} Integrations
                 </a> 
-              </li>
+              </li> {% endcomment %}
             </ul>
 
             <h6
