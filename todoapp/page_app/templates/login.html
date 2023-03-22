@@ -9,11 +9,28 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <title>Document</title>
 </head>
+<style>
+  form {
+    margin: 40px auto;
+    width: 400px;
+    padding: 20px 30px;
+    border: 1px solid rgb(225,225,225);
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+  }
+  h2{
+    color: rgb(52,75,226);
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+  }
+</style>
 <body>
   <h1>user login</h1>
   <form method="post">
     {% csrf_token %} {{ form | crispy }}
-    <button class="btn btn-primary" type="submit">add</button>
+    <button class="btn btn-primary" type="submit">login</button>
   </form>
 </body>
 </html>

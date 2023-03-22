@@ -1,8 +1,16 @@
 from django.shortcuts import render,redirect
 from .forms import userform
 from .models import Profile
-
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import user_passes_test
 # Create your views here.
+
+def is_user(user):  
+    try:       
+        return user.is_authenticated and (user.profile.type == 'USER')    
+    except Profile.DoesNotExist:        
+        return False      
 
 def home(request):
     return render(request,'home.html')
@@ -12,8 +20,7 @@ def calender(request):
     return render(request,'calender.html')
 def category(request):
     return render(request,'category.html')
-def login(request):
-    return render(request,'login.html')
+
 def register(request):
     if request.method=='POST':
         username= request.POST.get('username')
@@ -46,7 +53,25 @@ def user_registration(request):
     return render(request,'register.html' ,{'form':form})
    
 def user_login(request):
-    return render(request,'login.html')
+    if request.method =='POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request,user)
+                if(user.profile.type =='USER'):
+                    return redirect("userhome")
+                
+    else:
+        form = AuthenticationForm()
+    return render(request,'login.html', {'form':form})
+
+@user_passes_test(is_user,login_url='/user/login/')   
 def user_home(request):
     return render(request,'user_home.html')
 
+def logout_user(request):
+    logout(request)
+    return redirect('userlogin')
