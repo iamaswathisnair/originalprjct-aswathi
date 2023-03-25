@@ -43,8 +43,7 @@
         <div class="collapse navbar-collapse"   id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{% url 'home' %}"
-                >
+              <a class="nav-link" aria-current="page" href="{% url 'home' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                   <polyline points="5 12 3 12 12 3 21 12 19 12" />
@@ -165,7 +164,7 @@
                       d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
                     ></path>
                   </svg> {% endcomment %}
-                  calender
+                  Calender
                 </a>
               </li>
               <li class="nav-item">
@@ -191,7 +190,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'theme' %}">
                   {% comment %} <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -208,7 +207,7 @@
                     <line x1="12" y1="20" x2="12" y2="4"></line>
                     <line x1="6" y1="20" x2="6" y2="14"></line>
                   </svg> {% endcomment %}
-                  theme
+                  Theme
                 </a>
               </li>
               {% comment %} <li class="nav-item">
@@ -256,9 +255,10 @@
                 </svg> {% endcomment %}
               </a>
             </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+            <div class="today">
+            <ul class="nav flex-column mb-2" >
+              <li class="nav-item" >
+                <a class="nav-link" href="{% url 'today' %}">
                   {% comment %} <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -283,7 +283,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'yesterday' %}">
                   {% comment %} <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -308,7 +308,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'lastmonth' %}">
                   {% comment %} <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -334,6 +334,7 @@
               </li>
              
             </ul>
+          </div>
           </div>
         </nav>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-5 px-4">

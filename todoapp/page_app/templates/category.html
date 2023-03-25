@@ -7,12 +7,19 @@ category
 {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/cat.css' %}"/>
 {% endblock style %}
 
 
 
 {% block content %}
 <h1>category</h1>
-<p>this is category</p>
+<div class="cat-container">
+{% for i in category %}
+<div class="cat">
+<p>{{i.name}}</p>
+
+</div>
+{% endfor %}
+</div>
 {% endblock content %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import userform
 from .models import Profile
+from .models import Category
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import user_passes_test
@@ -18,8 +19,20 @@ def task(request):
     return render(request,'task.html')
 def calender(request):
     return render(request,'calender.html')
+ 
+def theme(request):
+    return render(request,'theme.html')
+def today(request):
+    return render(request,'today.html')
+def yesterday(request):
+    return render(request,'yesterday.html')
+def lastmonth(request):
+    return render(request,'lastmonth.html')
+
+
 def category(request):
-    return render(request,'category.html')
+    allCategory = Category.objects.all()
+    return render(request,'category.html',{"category":allCategory})
 
 def register(request):
     if request.method=='POST':
