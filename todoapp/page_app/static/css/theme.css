@@ -1,0 +1,34 @@
+.theme-container {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.theme-container-inside {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.box-1 {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: blue;
+  cursor: pointer;
+}
+
+.box-2 {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: rgb(9, 255, 30);
+  cursor: pointer;
+}
+
+.box-3 {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: rgb(255, 0, 0);
+  cursor: pointer;
+}

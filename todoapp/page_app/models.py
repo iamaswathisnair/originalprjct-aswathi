@@ -25,15 +25,24 @@ class Category(models.Model):
     )
     name =  models.CharField(max_length=400, choices = CHOICES, default ='ALL') 
 
+    def __str__(self):
+            return self.name
+
 class Task(models.Model):
+    CHOICES = (
+    ("ON GOING", "ON GOING"),
+    ("DONE", "DONE")
+    
+    )
+       
     title = models.CharField(max_length=50)
-    start_date =  models.DateTimeField(auto_now_add=True)
-    end_date =  models.DateTimeField(auto_now=True)
-    deadline = models.DateTimeField(auto_now=True)
-    completionstatus = models.TextField(max_length=255)
+    start_date =  models.DateTimeField(auto_now_add=False)
+    end_date =  models.DateTimeField(auto_now=False)
+    deadline = models.DateTimeField(auto_now=False)
+    completionstatus = models.CharField(max_length=255,choices=CHOICES)
     description = models.TextField(max_length=400)
     added_by = models.ForeignKey(User,on_delete=models.CASCADE)
-    Category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
 
 

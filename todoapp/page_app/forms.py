@@ -14,7 +14,10 @@ class userform(UserCreationForm):
           model = User
           fields = ('username','email','password1','password2')
 
-# class TaskForm(forms.ModelForm):
-#       class Meta:
-#             model = Task
-#             fields =('title','start_date','end_date','deadline','completionstatus','description')
+class TaskForm(forms.ModelForm):
+      start_date = forms.DateTimeField()
+      end_date = forms.DateTimeField()
+      deadline = forms.DateTimeField()
+      class Meta:
+            model = Task
+            fields =('title','start_date','end_date','deadline','completionstatus','description','category')

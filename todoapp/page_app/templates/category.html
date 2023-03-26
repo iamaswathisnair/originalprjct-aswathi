@@ -17,7 +17,9 @@ category
 <div class="cat-container">
 {% for i in category %}
 <div class="cat">
+<a  style="text-decoration:none;" href="{% url 'task' %}?categoryID={{i.id}}" >
 <p>{{i.name}}</p>
+    </a>
 
 </div>
 {% endfor %}

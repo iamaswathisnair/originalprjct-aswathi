@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .forms import userform
-from .models import Profile
+from .forms import userform,TaskForm
+from .models import Profile,Task
 from .models import Category
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
@@ -16,7 +16,34 @@ def is_user(user):
 def home(request):
     return render(request,'home.html')
 def task(request):
-    return render(request,'task.html')
+
+    catID = request.GET.get('categoryID')
+    if catID:
+        tasks = Task.objects.filter(category=catID)
+    else:
+        tasks = Task.objects.all()
+
+    if request.method == 'POST':
+        task_form = TaskForm(request.POST,request.FILES)
+        if task_form.is_valid():
+            task= Task()
+            task.title = task_form.cleaned_data['title']
+            task.start_date = task_form.cleaned_data['start_date']
+            task.end_date = task_form.cleaned_data['end_date']
+            task.deadline =task_form.cleaned_data['deadline']
+            task.completionstatus  = task_form.cleaned_data['completionstatus']
+            task.description  = task_form.cleaned_data['description']
+            task.category  = task_form.cleaned_data['category']
+            task.added_by = request.user
+            task.save()
+    else:
+        task_form = TaskForm()
+
+    data ={
+        "task_form":task_form,
+        "tasks":tasks
+    }
+    return render(request,'task.html',data)
 def calender(request):
     return render(request,'calender.html')
  

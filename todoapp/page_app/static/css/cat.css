@@ -1,20 +1,28 @@
-.cat-container{
-    width: 90%;
-    
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    /* background-color: blue;
+.cat-container {
+  width: 90%;
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* background-color: blue;
     border: 6px solid black;
     padding: 5px 10px;   */
 }
-.cat{
-    width: 25%;
-    height: 200px;
-    border: 1px solid red;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cat {
+  width: 25%;
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  color: blue;
+}
+
+.cat:hover {
+  background-color: rgb(255, 246, 246);
 }

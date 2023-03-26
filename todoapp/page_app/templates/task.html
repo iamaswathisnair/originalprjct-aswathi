@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 {% block title %}
@@ -7,19 +8,36 @@ task
 {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/task.css' %}"/>
 {% endblock style %}
 
 
 {% block content %}
 
-<h6>Due This Week</h6>
+<div class='task'>
+
+<div class='task-container'>
+{% for task in tasks %}
+<div class="task-card">
 <div class="istdiv">
-<h5><strong>Welcome to Todo-Task</strong></h5>
-<p class="firstp">exam mode</P>
-<p class="secondp">study well and score great</P>
-<p class="thirdp">6/3/2023</P>
+<h5><strong>{{task.title}}</strong> <span>{{task.category}}</span><span class="completion">{{task.completionstatus}}</span></h5>
+<div class="date-container">
+<p class="date">Started at.{{task.start_date}}</P>
+<p class="date">End at.{{task.end_date}}</P>
+<p class="date">Deadline.{{task.deadline}}</P>
 </div>
-</body>
+
+<p class="secondp">{{task.description}}</P>
+</div>
+</div>
+{% endfor %}
+</div>
+
+<form class="task-form" enctype="multipart/form-data" method="post">
+    {% csrf_token %} {{ form|crispy }}
+    {{ task_form|crispy }}
+    <button class="btn btn-primary" type="submit">ADD TASK</button>
+  </form>
+</div>
 
 {% endblock content %}

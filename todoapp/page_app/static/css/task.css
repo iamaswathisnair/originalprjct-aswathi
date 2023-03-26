@@ -1,0 +1,55 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-form {
+  width: 500px;
+  background-color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.task-container {
+  width: 90%;
+}
+
+.task-card {
+  background-color: white;
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.date-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.date-container .date {
+  font-size: 11px;
+  border: 1px solid rgb(255, 244, 145);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0px 10px;
+}
+
+h5 span {
+  font-size: 13px;
+  border: 1px solid greenyellow;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: rgb(243, 255, 224);
+}
+
+h5 .completion {
+  border: 1px solid rgb(0, 11, 168);
+  background-color: rgb(224, 226, 255);
+  margin-left: 10px;
+}
+
+.secondp {
+  font-size: 13px;
+  padding: 5px 0px 0px 0px;
+}
