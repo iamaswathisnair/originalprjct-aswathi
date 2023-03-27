@@ -45,5 +45,6 @@ class Task(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
 
-
-
+class Quotes(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField(max_length=400)

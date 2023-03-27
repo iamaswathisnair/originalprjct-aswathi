@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import userform,TaskForm
 from .models import Profile,Task
 from .models import Category
+from .models import Quotes
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import user_passes_test
@@ -15,6 +16,13 @@ def is_user(user):
 
 def home(request):
     return render(request,'home.html')
+    quotes = Quotes.objects.all()
+    data ={
+        "quotes":quotes,
+        # "tasks":tasks
+    }
+    return render(request,'home.html',data)
+
 def task(request):
 
     catID = request.GET.get('categoryID')
@@ -55,6 +63,10 @@ def yesterday(request):
     return render(request,'yesterday.html')
 def lastmonth(request):
     return render(request,'lastmonth.html')
+
+
+def quote(request):
+    return render(request,'home.html')
 
 
 def category(request):
