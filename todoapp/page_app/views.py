@@ -15,11 +15,12 @@ def is_user(user):
         return False      
 
 def home(request):
-    return render(request,'home.html')
     quotes = Quotes.objects.all()
+    print(quotes)
+    print("hello")
     data ={
         "quotes":quotes,
-        # "tasks":tasks
+        
     }
     return render(request,'home.html',data)
 
@@ -127,3 +128,6 @@ def user_home(request):
 def logout_user(request):
     logout(request)
     return redirect('userlogin')
+
+def newtask(request):
+    return redirect(request,'task.html')

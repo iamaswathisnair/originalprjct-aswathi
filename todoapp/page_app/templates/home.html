@@ -10,8 +10,10 @@ home
 <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
 {% endblock style %}
 {% block content %}
-{% for quotes in quotes %}
-
+{% for quote in quotes %}
+<p>{{quote.description}}</p>
+<p>aswathi</p>
+{% endfor %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-8">
