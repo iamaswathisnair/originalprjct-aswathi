@@ -12,7 +12,7 @@ urlpatterns = [
     path('today/', views.today,name='today'),
     path('yesterday/', views.yesterday,name='yesterday'),
     path('lastmonth/', views.lastmonth,name='lastmonth'),
-    # path('quotes/', views.quotes,name='quotes'),
+    
 
     path('user/logout/', views.logout_user,name='logout_user'),
 

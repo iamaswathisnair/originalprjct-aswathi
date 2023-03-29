@@ -53,6 +53,9 @@ def task(request):
         "tasks":tasks
     }
     return render(request,'task.html',data)
+
+
+    
 def calender(request):
     return render(request,'calender.html')
  
