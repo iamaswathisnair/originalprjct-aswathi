@@ -20,4 +20,4 @@ class TaskForm(forms.ModelForm):
       deadline = forms.DateTimeField()
       class Meta:
             model = Task
-            fields =('title','start_date','end_date','deadline','completionstatus','description','category')
+            fields =('title','completionstatus','category','start_date','end_date','deadline','description',)

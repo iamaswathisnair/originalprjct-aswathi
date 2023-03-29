@@ -6,32 +6,61 @@ from .models import Quotes
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import user_passes_test
+import random
 # Create your views here.
 
 def is_user(user):  
     try:       
         return user.is_authenticated and (user.profile.type == 'USER')    
     except Profile.DoesNotExist:        
-        return False      
+        return False 
 
 def home(request):
     quotes = Quotes.objects.all()
-    print(quotes)
-    print("hello")
+    qt = random.choice(quotes)
+    if request.user:
+        print("working")
     data ={
-        "quotes":quotes,
-        
+        "qt":qt,
+        "user":is_user(request.user),
+        "username":request.user.username,
+        "theme":request.user.profile.theme
     }
+    print(request.user)
     return render(request,'home.html',data)
 
+@user_passes_test(is_user,login_url='/user/login/') 
 def task(request):
 
     catID = request.GET.get('categoryID')
     if catID:
-        tasks = Task.objects.filter(category=catID)
+        tasks = Task.objects.filter(added_by=request.user).filter(category=catID)
     else:
-        tasks = Task.objects.all()
+        tasks = Task.objects.filter(added_by=request.user)
 
+    data ={
+        "tasks":tasks,
+        "user":is_user(request.user),
+        "theme":request.user.profile.theme
+
+    }
+    return render(request,'task.html',data)
+
+@user_passes_test(is_user,login_url='/user/login/') 
+def single_task(request,id):
+    task = Task.objects.get(id=id)
+    data ={
+        "task":task,
+        "user":is_user(request.user),
+        "theme":request.user.profile.theme
+
+
+    }
+    return render(request,'single-task.html',data)
+
+
+@user_passes_test(is_user,login_url='/user/login/')    
+def add_task(request):
     if request.method == 'POST':
         task_form = TaskForm(request.POST,request.FILES)
         if task_form.is_valid():
@@ -45,22 +74,43 @@ def task(request):
             task.category  = task_form.cleaned_data['category']
             task.added_by = request.user
             task.save()
+            return redirect('task')
     else:
         task_form = TaskForm()
-
     data ={
         "task_form":task_form,
-        "tasks":tasks
+        "user":request.user,
+        "theme":request.user.profile.theme
+
     }
-    return render(request,'task.html',data)
+    return render(request,'add-task.html',data)
 
+@user_passes_test(is_user,login_url='/user/login/')   
+def delete_task(request,id):
+    task = Task.objects.get(id=id)
+    task.delete()
+    return redirect('task')
 
-    
+@user_passes_test(is_user,login_url='/user/login/')   
 def calender(request):
-    return render(request,'calender.html')
+    data={
+        "theme":request.user.profile.theme
+
+    }
+    return render(request,'calender.html',data)
  
 def theme(request):
-    return render(request,'theme.html')
+    theme = request.GET.get('theme')
+
+    if theme:
+        profile = Profile.objects.filter(user=request.user)[0]
+        profile.theme = theme
+        profile.save()
+    data={
+        "theme":request.user.profile.theme
+
+    }
+    return render(request,'theme.html',data)
 def today(request):
     return render(request,'today.html')
 def yesterday(request):
@@ -72,27 +122,10 @@ def lastmonth(request):
 def quote(request):
     return render(request,'home.html')
 
-
+@user_passes_test(is_user,login_url='/user/login/')
 def category(request):
     allCategory = Category.objects.all()
-    return render(request,'category.html',{"category":allCategory})
-
-def register(request):
-    if request.method=='POST':
-        username= request.POST.get('username')
-        firstname= request.POST.get('firstname')
-        lastname= request.POST.get('lastname')
-        email= request.POST.get('email')
-        password= request.POST.get('password')
-        repassword= request.POST.get('repassword')
-        print(username)
-        print(firstname)
-        print(lastname)
-        print(email)
-        print(password)
-        print(repassword)
-
-    return render(request,'register.html')
+    return render(request,'category.html',{"category":allCategory,"user":request.user,"theme":request.user.profile.theme})
 
 def user_registration(request):
     if request.method == 'POST':
@@ -118,7 +151,7 @@ def user_login(request):
             if user is not None:
                 login(request,user)
                 if(user.profile.type =='USER'):
-                    return redirect("userhome")
+                    return redirect("home")
                 
     else:
         form = AuthenticationForm()

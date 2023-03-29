@@ -21,87 +21,81 @@
     />
     <title>{% block title %} {% endblock title %}</title>
   </head>
-  <body class="img-todo">
-    <nav
-      class="navbar navbar-dark fixed-top navbar-expand-lg "
-    >
-      <div class="container-fluid" "nav" >
-        <a class="navbar-brand"  href="{% url 'home' %}">
-          Todo</a>
-        <button
-          class="navbar-toggler" 
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse"   id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{% url 'home' %}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <polyline points="5 12 3 12 12 3 21 12 19 12" />
-                  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                  <rect x="10" y="12" width="4" height="4" />
-                </svg>
-                </a
-              >
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'task' %}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-plus" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                  <line x1="12" y1="11" x2="12" y2="17" />
-                  <line x1="9" y1="14" x2="15" y2="14" />
-                </svg></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'calender' %}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <rect x="4" y="5" width="16" height="16" rx="2" />
-                  <line x1="16" y1="3" x2="16" y2="7" />
-                  <line x1="8" y1="3" x2="8" y2="7" />
-                  <line x1="4" y1="11" x2="20" y2="11" />
-                  <rect x="8" y="15" width="2" height="2" />
-                </svg>
-                
-                </a>
-            </li>
+  <body style="background-color:{% if theme == 'red' %} #ff8686; {% elif theme == 'blue' %} #aaaaff; {% elif theme == 'green' %} #fba62f; {% endif %}" class="img-todo">
+    <nav class="navbar-cls" style="background-color:{{theme}}">
+      <a class="navbar-brand"  href="{% url 'home' %}">
+        Todo</a>
+        <ul>
+          <li >
+            <a aria-current="page" href="{% url 'home' %}">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                <rect x="10" y="12" width="4" height="4" />
+              </svg>
+              </a
+            >
+          </li>
+          
+          <li>
+            <a  href="{% url 'add-task' %}">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-plus" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                <line x1="12" y1="11" x2="12" y2="17" />
+                <line x1="9" y1="14" x2="15" y2="14" />
+              </svg></a>
+          </li>
+          <li>
+            <a  href="{% url 'calender' %}">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="4" y="5" width="16" height="16" rx="2" />
+                <line x1="16" y1="3" x2="16" y2="7" />
+                <line x1="8" y1="3" x2="8" y2="7" />
+                <line x1="4" y1="11" x2="20" y2="11" />
+                <rect x="8" y="15" width="2" height="2" />
+              </svg>
+              
+              </a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'category' %}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-list" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
-                  <rect x="9" y="3" width="6" height="4" rx="2" />
-                  <line x1="9" y1="12" x2="9.01" y2="12" />
-                  <line x1="13" y1="12" x2="15" y2="12" />
-                  <line x1="9" y1="16" x2="9.01" y2="16" />
-                  <line x1="13" y1="16" x2="15" y2="16" />
-                </svg></a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
+          <li>
+            <a  href="{% url 'category' %}">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-list" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+                <rect x="9" y="3" width="6" height="4" rx="2" />
+                <line x1="9" y1="12" x2="9.01" y2="12" />
+                <line x1="13" y1="12" x2="15" y2="12" />
+                <line x1="9" y1="16" x2="9.01" y2="16" />
+                <line x1="13" y1="16" x2="15" y2="16" />
+              </svg></a>
+          </li>
+          {% if user%}
+          <li>
+            <a class="login-btn" href="{% url 'logout_user' %}">
+              Logout
+              </a>            
+          </li>
+          {% else %}
+          <li>
+            <a class="login-btn" href="{% url 'userlogin' %}">
+              Login
+              </a>            
+          </li>
+          {% endif %}
+        </ul>
     </nav>
     <div class="container-fluid mt-2">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block  sidebar mt-5 fixed " >
-          <div class="sidebar position-fixed pt-2 fixed border-nav ">
+          <div style="background-color:{{theme}};" class="sidebar position-fixed pt-2 fixed border-nav ">
             <ul class="nav flex-column my-nav">
               <li class="nav-item">
-                <a class="nav-link active" href="{% url 'home' %}">
+                <a class="nav-link active side-bar-li" href="{% url 'home' %}">
                   Dashboard 
                 </a>
               </li>
@@ -126,103 +120,22 @@
                 </a>
               </li>
             </ul>
-
-            <h6
-              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <div class="recent">Recent</div>
-              <a class="d-flex align-items-center text-muted" href="#">
-                {% comment %} <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-plus-circle"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="16"></line>
-                  <line x1="8" y1="12" x2="16" y2="12"></line>
-                </svg> {% endcomment %}
-              </a>
-            </h6>
             <div class="today">
-            <ul class="nav flex-column mb-2" >
+            <ul class="nav flex-column mb-2 my-nav" >
               <li class="nav-item" >
                 <a class="nav-link" href="{% url 'today' %}">
-                  {% comment %} <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-file-text"
-                  >
-                    <path
-                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                    ></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                    <polyline points="10 9 9 9 8 9"></polyline>
-                  </svg> {% endcomment %}
+                 
                   Today
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'yesterday' %}">
-                  {% comment %} <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-file-text"
-                  >
-                    <path
-                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                    ></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                    <polyline points="10 9 9 9 8 9"></polyline>
-                  </svg> {% endcomment %}
+                 
                   Yesterday
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'lastmonth' %}">
-                  {% comment %} <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-file-text"
-                  >
-                    <path
-                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                    ></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                    <polyline points="10 9 9 9 8 9"></polyline>
-                  </svg> {% endcomment %}
                   Last month
                 </a>
               </li>

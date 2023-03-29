@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+task
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/single-task.css' %}"/>
+{% endblock style %}
+
+
+{% block content %}
+
+<div class="single-task">
+    <h1>{{task.title}}</h1>
+    <div class="panel">
+        <p>{{task.completionstatus}}</p>
+        <p>{{task.category}}</p>
+    </div>
+    <p class="description">{{task.description}}</p>
+    <div class="panel">
+        <p>START DATE: {{task.start_date}}</p>
+        <p>END DATE: {{task.end_date}}</p>
+        <p>DEADLINE: {{task.deadline}}</p>
+    </div>
+
+</div>
+{% endblock content %}

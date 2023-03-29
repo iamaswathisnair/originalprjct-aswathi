@@ -11,6 +11,7 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete= models.CASCADE)
     type = models.CharField(max_length=150, choices = CHOICES, default ='USER')
+    theme = models.CharField(max_length=150,default="orange")
 
 class Category(models.Model):
     CHOICES = (
@@ -34,7 +35,6 @@ class Task(models.Model):
     ("DONE", "DONE")
     
     )
-       
     title = models.CharField(max_length=50)
     start_date =  models.DateTimeField(auto_now_add=False)
     end_date =  models.DateTimeField(auto_now=False)

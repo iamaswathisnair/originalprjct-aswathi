@@ -1,34 +1,64 @@
-.nav-link:hover {
-  color: black !important;
-}
-
 .navbar-brand {
   font-size: 40px;
   margin-top: -16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 900;
   /* background-color: darkgreen; */
 }
 
 body {
-  font-family: 'Mukta', sans-serif;
+  font-family: "Mukta", sans-serif;
+  box-sizing: border-box;
 }
 
 h6 {
   color: red;
   /* margin-top:10px; */
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 h3 {
   color: black;
 }
 
+.navbar-cls {
+  position: fixed;
+  top: 0;
+  display: flex;
+  height: 55px;
+  width: 100%;
+  z-index: 10;
+  justify-content: space-between;
+  background-color: #fba62f;
+  align-items: center;
+}
+
+.navbar-cls a {
+  color: white;
+  margin: 10px;
+}
+
+.navbar-brand {
+  padding-left: 12px;
+  padding-top: 15px;
+}
+
+.navbar-cls ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  height: 60px;
+}
+
+.navbar-cls li {
+  margin: 20px;
+}
+
 .navbar-color {
   background: #c9e1c1 !important;
 }
 .img-todo {
-  background-image: url('/static/img/yellow.jpg');
+  background-color: #ffd970;
   background-size: cover;
   width: 100%;
 }
@@ -38,23 +68,22 @@ h3 {
   height: 900px;
   width: 230px;
   margin-left: -20px;
-  /* margin-right: 40px;
-    color:white ; */
 }
 
 .my-nav {
   margin-top: 60px;
-  /* background-color: blue; */
   margin-left: 5px;
 }
 
+.my-nav li {
+  height: 50px;
+}
+
 .nav-item a {
-  /* main */
-  /* background-color: darkred; */
   color: white;
   line-height: 25px;
   font-size: 22px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-left: 10px;
   margin-top: 20px;
 }
@@ -62,16 +91,12 @@ h3 {
 .today {
   margin-left: 5px;
   margin-top: 30px;
-  /* background-color:black */
 }
 
 .nav-item a svg {
-  /* icon */
   margin-top: -50px;
   margin-right: 30px;
   margin-left: 38px;
-
-  /* background-color:crimson; */
 }
 .sidebar {
   position: relative;
@@ -79,33 +104,14 @@ h3 {
   left: 10px;
 }
 
-.navbar-nav {
-  /* background-color: #fed650; */
+.nav-link:hover {
+  background-color: rgb(255, 181, 44);
+  color: white;
 }
 
-/* display: flex;
-  gap: 10px;
-            width: 100%; 
-            justify-content:space-between;
-            align-items: center;
-          background-color: coral ;
-             color: black;
-            flex-direction:row; */
-
-/* <div class="container teal borderYtoX">
-  <a>HOME</a>
-  <a>ARTICLES</a>
-  <a>PORTFOLIO</a>
-  <a>ABOUT</a>
-  <a>CONTACT</a>
-</div>
-text-align: center;
-color: #FFF;
-text-decoration: none;
-font: 20px Raleway;
-margin: 0px 10px;
-padding: 10px 10px;
-position: relative;
-z-index: 0;
-cursor: pointer;
- */
+.login-btn {
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

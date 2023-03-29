@@ -10,17 +10,13 @@ home
 <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
 {% endblock style %}
 {% block content %}
-{% for quote in quotes %}
-<p>{{quote.description}}</p>
-{% endfor %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-8">
             <div class="hometag">
-                <h3 class="h3tag">Hello ,welcome Aswathi!</h3>
+                <h3 class="h3tag">Hello ,welcome {{username}}</h3>
                 <h4 class="h2tag" id="current-time">0:00 am</h4>
-                <p class="p-tag">"Each day I will accomplish one thing on my to do list.” <br>
-                -paul j meyer </p>
+                <p class="p-tag">{{qt.description}} </p>
                 </div>  
         </div>
     </div> 
