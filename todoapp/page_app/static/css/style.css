@@ -62,8 +62,8 @@ h3 {
 .border-nav {
   background-color: orange;
   height: 900px;
-  width: 230px;
-  margin-left: -20px;
+  width: 100px;
+  margin-left: -10px;
 }
 
 .my-nav {
