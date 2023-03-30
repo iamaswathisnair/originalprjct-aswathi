@@ -18,13 +18,17 @@ def is_user(user):
 def home(request):
     quotes = Quotes.objects.all()
     qt = random.choice(quotes)
+    if request.user and hasattr(request.user,'profile'):
+        theme = request.user.profile.theme
+    else:
+        theme = "orange"
     if request.user:
         print("working")
     data ={
         "qt":qt,
         "user":is_user(request.user),
         "username":request.user.username,
-        "theme":request.user.profile.theme
+        "theme":theme
     }
     print(request.user)
     return render(request,'home.html',data)
