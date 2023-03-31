@@ -14,7 +14,6 @@ body {
 h6 {
   color: red;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  
 }
 
 h3 {
@@ -29,7 +28,6 @@ h3 {
   width: 100%;
   z-index: 10;
   justify-content: space-between;
-  background-color: #fba62f;
   align-items: center;
 }
 
@@ -42,7 +40,6 @@ h3 {
 .navbar-brand {
   padding-left: 12px;
   padding-top: 15px;
- 
 }
 
 .navbar-cls ul {
@@ -51,11 +48,10 @@ h3 {
   align-items: center;
   /* background-color: crimson; */
   margin-top: 30px;
-  
 }
 
 .navbar-cls li {
-  margin: 20px;
+  margin: 20px 20px;
   /* background-color:darkgreen */
 }
 
@@ -76,23 +72,22 @@ h3 {
 }
 
 .my-nav {
-  margin-top: 60px;
+  /* margin-top: 60px; */
   margin-left: 5px;
-  
 }
 
 /* dashboard */
 .my-nav li {
   height: 60px;
   width: 160px;
-  
+
   /* background-color: black; */
 }
 
 .nav-item a {
   color: white;
   line-height: 55px;
-  
+
   font-size: 22px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-left: 10px;
@@ -107,7 +102,6 @@ h3 {
 .nav-item a svg {
   margin-right: 30px;
   margin-left: 38px;
- 
 }
 .sidebar {
   position: relative;
@@ -116,8 +110,7 @@ h3 {
 }
 
 .nav-link:hover {
-
-  color:black;
+  color: wheat;
 }
 
 .login-btn {
@@ -127,22 +120,31 @@ h3 {
   border-radius: 5px;
 }
 
-.black-bar{
+.black-bar {
   background-color: rgb(3, 3, 3);
 }
 
-.grey-bar{
+.grey-bar {
   background-color: grey;
 }
 
-.green-bar{
+.green-bar {
   background-color: green;
 }
 
-.pink-bar{
+.pink-bar {
   background-color: rgb(255, 100, 126);
 }
 
-.black-bar{
+.black-bar {
   background-color: black;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar-top {
+  position: relative;
+  z-index: 10;
 }
