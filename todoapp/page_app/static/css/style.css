@@ -2,16 +2,19 @@
   font-size: 40px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 900;
+  /* background-color: blueviolet; */
 }
 
 body {
   font-family: "Mukta", sans-serif;
   box-sizing: border-box;
+  background-color: aqua;
 }
 
 h6 {
   color: red;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  
 }
 
 h3 {
@@ -32,22 +35,28 @@ h3 {
 
 .navbar-cls a {
   color: white;
-  margin: 10px;
+  margin: 20px;
+  /* background-color:black; */
 }
 
 .navbar-brand {
   padding-left: 12px;
   padding-top: 15px;
+ 
 }
 
 .navbar-cls ul {
   display: flex;
   list-style-type: none;
   align-items: center;
+  /* background-color: crimson; */
+  margin-top: 30px;
+  
 }
 
 .navbar-cls li {
   margin: 20px;
+  /* background-color:darkgreen */
 }
 
 .navbar-color {
@@ -69,15 +78,21 @@ h3 {
 .my-nav {
   margin-top: 60px;
   margin-left: 5px;
+  
 }
 
+/* dashboard */
 .my-nav li {
-  height: 50px;
+  height: 60px;
+  width: 160px;
+  
+  /* background-color: black; */
 }
 
 .nav-item a {
   color: white;
-  line-height: 25px;
+  line-height: 55px;
+  
   font-size: 22px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-left: 10px;
@@ -92,6 +107,7 @@ h3 {
 .nav-item a svg {
   margin-right: 30px;
   margin-left: 38px;
+ 
 }
 .sidebar {
   position: relative;
@@ -100,8 +116,8 @@ h3 {
 }
 
 .nav-link:hover {
-  background-color: rgb(255, 181, 44);
-  color: white;
+
+  color:black;
 }
 
 .login-btn {
@@ -109,4 +125,24 @@ h3 {
   border: 1px solid white;
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+.black-bar{
+  background-color: rgb(3, 3, 3);
+}
+
+.grey-bar{
+  background-color: grey;
+}
+
+.green-bar{
+  background-color: green;
+}
+
+.pink-bar{
+  background-color: rgb(255, 100, 126);
+}
+
+.black-bar{
+  background-color: black;
 }

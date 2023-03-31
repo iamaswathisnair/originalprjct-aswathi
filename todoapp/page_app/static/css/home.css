@@ -1,22 +1,25 @@
-h6 {
+/* h6 {
   color: red;
   margin-top: 100px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
+  background-color: hotpink;
+} */
 
-.istdiv {
+/* .istdiv {
   width: 400px;
   height: 200px;
   background-color: whitesmoke;
   border-radius: 7px;
   padding: 5px 10px;
   margin-top: 30px;
-}
+  background-color: hotpink;
+} */
 .hometag {
   width: 700px;
-  height: 200px;
-  margin-top: 175px;
+  height: 150px;
+  margin-top: 270px;
   color: white;
+  /* background-color: hotpink; */
 }
 .p-tag {
   font-size: 25px;
@@ -25,11 +28,13 @@ h6 {
   height: 200px;
   width: 600px;
   overflow: hidden;
+  /* background-color: red; */
 }
 .h2tag {
   font-size: 80px;
   font-weight: bold;
   letter-spacing: 3px;
+  /* background-color: hotpink; */
 }
 
 .h3tag {
@@ -39,4 +44,5 @@ h6 {
 
 .task-card {
   margin-top: 100px;
+  background-color:black;
 }

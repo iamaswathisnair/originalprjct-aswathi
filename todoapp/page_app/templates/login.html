@@ -16,21 +16,37 @@
     padding: 20px 30px;
     border: 1px solid rgb(225,225,225);
     border-radius: 5px;
-    background-color: black;
+    background-color: #1ddb82;
     color: white;
+    /* margin-top: 140px; */
   }
-  h2{
+  /* h2{
     color: rgb(52,75,226);
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
+  } */
+  h1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+    font-size: 30px;
+    margin-left: 460px;
+    margin-top: 20px;
+    
+  }
+  a{
+    margin-left: 590px;
   }
 </style>
 <body>
-  <h1>user login</h1>
+  <h1>Welcome back! Please login</h1>
   <form method="post">
     {% csrf_token %} {{ form | crispy }}
+    
+    <input type="checkbox">Remember Me</button><br><br>
     <button class="btn btn-primary" type="submit">login</button>
+    
+                 
   </form>
+  <a  href="{% url 'userregistration' %}">Register for an account?</a>
 </body>
 </html>

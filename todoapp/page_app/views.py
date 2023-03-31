@@ -116,11 +116,25 @@ def theme(request):
     }
     return render(request,'theme.html',data)
 def today(request):
-    return render(request,'today.html')
+    tasks = Task.objects.filter(added_by=request.user)
+    data ={
+        "tasks":tasks,
+        "user":is_user(request.user),
+        "theme":request.user.profile.theme
+
+    }
+    return render(request,'today.html',data)
+    
+    
 def yesterday(request):
-    return render(request,'yesterday.html')
-def lastmonth(request):
-    return render(request,'lastmonth.html')
+    tasks = Task.objects.filter(added_by=request.user)
+    data ={
+        "tasks":tasks,
+        "user":is_user(request.user),
+        "theme":request.user.profile.theme
+
+    }
+    return render(request,'yesterday.html',data)
 
 
 def quote(request):

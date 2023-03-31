@@ -14,8 +14,7 @@ urlpatterns = [
     path('theme/', views.theme,name='theme'),
     path('today/', views.today,name='today'),
     path('yesterday/', views.yesterday,name='yesterday'),
-    path('lastmonth/', views.lastmonth,name='lastmonth'),
-    path('lastmonth/', views.lastmonth,name='lastmonth'),
+    
     
 
     path('user/logout/', views.logout_user,name='logout_user'),
