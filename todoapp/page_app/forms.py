@@ -21,3 +21,10 @@ class TaskForm(forms.ModelForm):
       class Meta:
             model = Task
             fields =('title','completionstatus','category','start_date','end_date','deadline','description',)
+
+
+
+class TaskFormEdit(forms.ModelForm):
+      class Meta:
+            model = Task
+            fields =('completionstatus',)

@@ -148,3 +148,11 @@ h3 {
   position: relative;
   z-index: 10;
 }
+.navbar-cls {
+  position: relative;
+}
+.navbar-cls li a {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}

@@ -20,6 +20,13 @@ task
         <p>{{task.completionstatus}}</p>
         <p>{{task.category}}</p>
     </div>
+    <div class="cat-change">
+        <form method="post">
+            {% csrf_token %}
+        {{form | crispy}}
+        <button class="btn btn-primary">CHANGE STATUS</button>
+        </form>
+    </div>
     <p class="description">{{task.description}}</p>
     <div class="panel">
         <p>START DATE: {{task.start_date}}</p>

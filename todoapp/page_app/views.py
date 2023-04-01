@@ -1,11 +1,12 @@
 from django.shortcuts import render,redirect
-from .forms import userform,TaskForm
+from .forms import userform,TaskForm, TaskFormEdit
 from .models import Profile,Task
 from .models import Category
 from .models import Quotes
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import user_passes_test
+from datetime import datetime, timedelta
 import random
 # Create your views here.
 
@@ -53,12 +54,19 @@ def task(request):
 @user_passes_test(is_user,login_url='/user/login/') 
 def single_task(request,id):
     task = Task.objects.get(id=id)
+    if request.method == 'POST':
+        task_form = TaskFormEdit(request.POST,request.FILES)
+        if task_form.is_valid():
+            task.completionstatus = task_form.cleaned_data['completionstatus']
+            task.save()
+            redirect(f'/tasks/{id}')
+    else:
+        task_form = TaskFormEdit()
     data ={
         "task":task,
         "user":is_user(request.user),
-        "theme":request.user.profile.theme
-
-
+        "theme":request.user.profile.theme,
+        "form":task_form
     }
     return render(request,'single-task.html',data)
 
@@ -115,19 +123,22 @@ def theme(request):
 
     }
     return render(request,'theme.html',data)
+
+@user_passes_test(is_user,login_url='/user/login/')   
 def today(request):
-    tasks = Task.objects.filter(added_by=request.user)
+    today = datetime.now().date()
+    tasks = Task.objects.filter(start_date=today)
     data ={
         "tasks":tasks,
         "user":is_user(request.user),
         "theme":request.user.profile.theme
-
     }
     return render(request,'today.html',data)
     
-    
+@user_passes_test(is_user,login_url='/user/login/')       
 def yesterday(request):
-    tasks = Task.objects.filter(added_by=request.user)
+    yesterday =datetime.now() - timedelta(1)
+    tasks = Task.objects.filter(start_date=yesterday.date())
     data ={
         "tasks":tasks,
         "user":is_user(request.user),
