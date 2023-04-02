@@ -35,7 +35,23 @@ task
 </a></h5>
 <div class="ctrl">
   <span class="date">Started at.{{task.start_date}}<span>
-  <span><span class="status">{{task.category}}</span><span class="completion">{{task.completionstatus}}</span></span></div>
+  <span><span class="status">{{task.category}}</span>
+
+  {% if task.is_past_due %}
+
+  <span class="completion overdue">
+    OVER DUE
+  </span>
+    {% else %}
+  <span class="completion">
+
+    {{task.completionstatus}}
+  </span>
+
+{% endif %}
+
+
+</span></div>
 <p class="secondp">{{task.description}}</P>
 </div>
 </div>
