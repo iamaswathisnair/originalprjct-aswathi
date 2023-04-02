@@ -38,8 +38,11 @@ def home(request):
 def task(request):
 
     catID = request.GET.get('categoryID')
+    date = request.GET.get('date')
     if catID:
         tasks = Task.objects.filter(added_by=request.user).filter(category=catID)
+    elif date:
+        tasks = Task.objects.filter(added_by=request.user).filter(start_date=date)
     else:
         tasks = Task.objects.filter(added_by=request.user)
 
@@ -105,6 +108,12 @@ def delete_task(request,id):
 
 @user_passes_test(is_user,login_url='/user/login/')   
 def calender(request):
+    if request.method == 'POST':
+        date  = request.POST['date']
+        return redirect(f'/task?date={date}')
+        print(date)
+
+
     data={
         "theme":request.user.profile.theme
 
