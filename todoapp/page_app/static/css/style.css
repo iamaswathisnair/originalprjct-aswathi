@@ -152,7 +152,7 @@ h3 {
   position: relative;
 }
 .navbar-cls li a {
-  position: relative;
-  z-index: 10;
+  position: relative !important;
+  z-index: 10 !important;
   cursor: pointer;
 }

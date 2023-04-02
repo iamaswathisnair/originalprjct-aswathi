@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load calendarium_tags %}
+
 
 
 {% block title %}
@@ -7,12 +9,15 @@ calender
 {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/calender.css' %}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static "calendarium/css/calendar.css" %}">
 {% endblock style %}
 
 
 
 {% block content %}
-<h1>calender</h1>
+<h1>Calender</h1>
+{% render_upcoming_events %}
 <p>this is calender</p>
 {% endblock content %}
