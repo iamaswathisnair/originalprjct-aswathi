@@ -37,7 +37,7 @@ task
   <span class="date">Started at.{{task.start_date}}<span>
   <span><span class="status">{{task.category}}</span>
 
-  {% if task.is_past_due %}
+  {% if task.is_past_due and task.completionstatus != "DONE" %}
 
   <span class="completion overdue">
     OVER DUE
