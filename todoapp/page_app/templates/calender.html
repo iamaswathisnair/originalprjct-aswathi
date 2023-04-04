@@ -14,10 +14,13 @@ calender
 
 
 {% block content %}
-<h1>Calender</h1>
+<div class="calender">
+<h3>Calender</h3>
+</div>
 <form method="post">
     {% csrf_token %}
 <input name="date" class="calender" type="date" />
 <button type='submit'>SHOW TASKS</button>
 </form>
+
 {% endblock content %}

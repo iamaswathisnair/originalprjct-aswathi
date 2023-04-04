@@ -68,3 +68,7 @@
     rgb(255, 163, 35) 100%
   );
 }
+
+.theme h3 {
+  color: white;
+}
