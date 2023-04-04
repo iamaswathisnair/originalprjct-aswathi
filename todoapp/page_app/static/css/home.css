@@ -20,15 +20,17 @@
   position: relative;
   color: white;
   /* background-color: hotpink; */
+ 
 }
 .p-tag {
   font-size: 25px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
-  height: 200px;
+  height: 150px;
   width: 600px;
   overflow: hidden;
   /* background-color: red; */
+ 
 }
 .h2tag {
   font-size: 80px;

@@ -7,6 +7,7 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap !important;
 }
 
 .box-1 {
@@ -23,7 +24,11 @@
   width: 100px;
   height: 100px;
   border-radius: 5px;
-  background: linear-gradient(-45deg, rgb(163, 190, 204), rgb(122, 143, 153) 100%);
+  background: linear-gradient(
+    -45deg,
+    rgb(163, 190, 204),
+    rgb(122, 143, 153) 100%
+  );
   box-shadow: white 0px 0px 0px 2px, rgb(0, 170, 255) 0px 0px 0px 4px;
   cursor: pointer;
 }
@@ -40,25 +45,26 @@
   width: 100px;
   height: 100px;
   border-radius: 5px;
-  background: linear-gradient(-45deg, rgb(255, 102, 204), rgb(230, 46, 77) 100%);
+  background: linear-gradient(
+    -45deg,
+    rgb(255, 102, 204),
+    rgb(230, 46, 77) 100%
+  );
   cursor: pointer;
   box-shadow: white 0px 0px 0px 2px, rgb(0, 170, 255) 0px 0px 0px 4px;
 }
+
 .box-5 {
   width: 100px;
   height: 100px;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(-45deg, rgb(230, 92, 230), rgb(122, 82, 204) 100%);
-  box-shadow: white 0px 0px 0px 2px, rgb(0, 170, 255) 0px 0px 0px 4px;
-}
-.box-5 {
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  cursor: pointer;
-  
+
   box-shadow: white 0px 0px 0px 2px, rgb(0, 170, 255) 0px 0px 0px 4px;
 
-background: linear-gradient(-45deg, rgb(61, 71, 77), rgb(26, 9, 0) 100%);
+  background: linear-gradient(
+    -45deg,
+    rgb(255, 246, 113),
+    rgb(255, 163, 35) 100%
+  );
 }

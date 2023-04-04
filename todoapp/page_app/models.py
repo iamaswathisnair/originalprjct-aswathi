@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 
 
@@ -43,6 +44,9 @@ class Task(models.Model):
     description = models.TextField(max_length=400)
     added_by = models.ForeignKey(User,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
+
+    def is_past_due(self):
+        return datetime.now().date() > self.end_date.date()
 
 
 class Quotes(models.Model):

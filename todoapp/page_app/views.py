@@ -36,7 +36,7 @@ def home(request):
 
 @user_passes_test(is_user,login_url='/user/login/') 
 def task(request):
-
+    today = datetime.now().date()
     catID = request.GET.get('categoryID')
     date = request.GET.get('date')
     if catID:
@@ -49,7 +49,8 @@ def task(request):
     data ={
         "tasks":tasks,
         "user":is_user(request.user),
-        "theme":request.user.profile.theme
+        "theme":request.user.profile.theme,
+        "date":today
 
     }
     return render(request,'task.html',data)
